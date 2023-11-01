@@ -15,8 +15,6 @@ public class BrandManager implements BrandService {
 
     private BrandRepository brandRepository;
 
-
-
     public BrandManager(BrandRepository brandRepository) {
         this.brandRepository = brandRepository;
     }
@@ -25,9 +23,9 @@ public class BrandManager implements BrandService {
     public List<GetAllBrandsResponse> getAll() {
 
         List<Brand> brands = brandRepository.findAll();
-        List<GetAllBrandsResponse> brandsResponse = new ArrayList<GetAllBrandsResponse>();
+        List<GetAllBrandsResponse> brandsResponse = new ArrayList<>();
 
-        for(Brand brand : brands){
+        for (Brand brand : brands) {
             GetAllBrandsResponse responseItem = new GetAllBrandsResponse();
             responseItem.setId(brand.getId());
             responseItem.setName(brand.getName());
